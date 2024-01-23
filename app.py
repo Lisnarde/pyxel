@@ -25,10 +25,10 @@ class Jeu:
         pyxel.run(self.update, self.draw)
 
     def deplacement(self):
-        if pyxel.btn(pyxel.KEY_RIGHT):
+        if pyxel.btn(pyxel.KEY_RIGHT) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
             self.p_x += 2
             self.sens = 1
-        if pyxel.btn(pyxel.KEY_LEFT):
+        if pyxel.btn(pyxel.KEY_LEFT) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
             self.p_x += -2
             self.sens = -1
     
@@ -52,7 +52,7 @@ class Jeu:
         
     
     def sauter(self):
-        if pyxel.btnp(pyxel.KEY_SPACE) and self.en_air == False:
+        if (pyxel.btnp(pyxel.KEY_SPACE)or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_UP)) and self.en_air == False:
             self.en_saut = True
             pyxel.play(0,0)
         if self.en_saut == True:
