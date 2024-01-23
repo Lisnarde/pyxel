@@ -9,7 +9,7 @@ class Jeu:
     def __init__(self):
         pyxel.init(WIDTH, HEIGHT, title=TITLE)
         
-        self.p_x = 10
+        self.p_x = 0
         self.p_y = 10
         
         self.sols = [(5,50,50), (75,50,30), (110,70, 40), (180,50,30), (230,40,30), (290,20,20),(360,40,40),
